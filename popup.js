@@ -55,7 +55,6 @@ function displayHelper(dnsResponses, dnsData) {
   return;
 };
 
-
 // Parses the current tab's (sub)domain from the URL
 function parseDomain(currentUrl) {
   const noScheme = currentUrl.replace(/https?:\/\//g, "");
@@ -65,8 +64,18 @@ function parseDomain(currentUrl) {
   return parsedDomain;
 };
 
+// Removes a subdomain
+function getRoot(domain) {
+  let rootDomain = domain;
+  rootDomain = rootDomain.replace(/^([^\.]+)\.(?=[^\.]+\.[^\.]+$)/, "");
+  return rootDomain;
+}
+
 // Retrieves DNS information
 async function dig(name, type) {
+  if (type == "ns") {
+    name = getRoot(name);
+  }
   let dnsAnswer;
   let response = await fetch(`https://dns.google/resolve?name=${name}&type=${type}`)
     .then(response => response.json())

@@ -1,12 +1,9 @@
 {
-  "name": "Whois QuickCheck",
-  "description": "Quickly check DNS settings for the site you're on.",
-  "version": "0.2",
+  "name": "DNS QuickCheck",
+  "description": "Quickly query DNS settings without interupting your workflow.",
+  "version": "1.1",
   "manifest_version": 3,
-  "background": {
-    "service_worker": "background.js"
-  },
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["activeTab"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

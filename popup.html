@@ -1,10 +1,65 @@
 <!DOCTYPE html>
+<!-- 
+This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+International License. To view a copy of this license, visit 
+http://creativecommons.org/licenses/by-nc-sa/4.0/. 
+-->
 <html>
-  <head>
-    <link rel="stylesheet" href="button.css">
-  </head>
-  <body>
-    <button id="searchDNS">Check<br>DNS</button>
-    <script src="/popup.js"></script>
-  </body>
+
+<head>
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js"></script>
+  <title>DNS QuickCheck</title>
+</head>
+
+<body>
+  <header>
+    <h1>DNS QuickCheck</h1>
+    <a id="about-link" href="#"><span>About</span></a>
+  </header>
+  <div id="about">
+    <p>
+      Use this tool to quickly query DNS settings.
+      Defaults to the current tab's (sub)domain and a "QuickCheck"
+      which displays A, CNAME, and NS records if available.
+    </p>
+
+    <p>
+      This is a 100% free tool. If you find it useful, consider
+      <a href="https://account.venmo.com/u/ArthurKTripp" target="_blank">buying me a coffee on Venmo</a>
+      so I can keep pulling these late nights. Or connect with me on one of these fine platforms:
+    </p>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/arthurktripp" target="_blank">LinkedIn</a></li>
+      <li><a href="https://www.github.com/arthurktripp" target="_blank">GitHub</a></li>
+      <li><a href="https://arthurktripp.com" target="_blank">arthurktripp.com</a></li>
+    </ul>
+  </div>
+
+  <form>
+    <label for="record-type">Type:</label><br>
+    <select id="record-type">
+      <option value="quickCheck">QuickCheck</option>
+      <option value="a">A</option>
+      <option value="aaaa">AAAA</option>
+      <option value="cname">CNAME</option>
+      <option value="mx">MX</option>
+      <option value="ns">NS</option>
+      <option value="soa">SOA</option>
+      <option value="srv">SRV</option>
+      <option value="txt">TXT</option>
+    </select><br>
+    <label for="record-name">Name:</label><br>
+    <input type="text" id="record-name"><br>
+    <input type="submit" id="submit-button" value="Check">
+  </form>
+
+
+  <div id="results">
+    <!-- Dynamically filled with search results -->
+  </div>
+
+
+</body>
+
 </html>

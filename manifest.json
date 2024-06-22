@@ -1,7 +1,7 @@
 {
   "name": "DNS QuickCheck",
   "description": "Quickly query DNS settings without interupting your workflow.",
-  "version": "1.1",
+  "version": "1.1.1",
   "manifest_version": 3,
   "permissions": ["activeTab"],
   "action": {

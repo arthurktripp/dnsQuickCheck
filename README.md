@@ -1,6 +1,9 @@
 # DNS QuickCheck
 A Chrome browser extension that fetches DNS settings for the current tab's site. It also allows for querying other domains directly from the extension window.
 
+# Add to Chrome
+https://chromewebstore.google.com/detail/dns-quickcheck/hpbgbfnilhpfclflghnncejjoibmmijc
+
 ## QuickCheck
 The extension defaults to displaying A, NS, and CNAME records (where available) for the (sub)domain.
 

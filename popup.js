@@ -4,7 +4,6 @@
  * http://creativecommons.org/licenses/by-nc-sa/4.0/.
  */
 
-let dnsData;
 let dnsRecordTypes = {
   "1": "A",
   "2": "NS",
@@ -36,12 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
 // Runs three queries and sends them to displayDnsData
 async function quickCheck(domain) {
   let dnsResponses = [];
-  dnsData = await dig(domain, "a");
-  if (dnsData) { displayHelper(dnsResponses, dnsData) }
-  dnsData = await dig(domain, "cname");
-  if (dnsData) { displayHelper(dnsResponses, dnsData) };
-  dnsData = await dig(domain, "ns");
-  if (dnsData) { displayHelper(dnsResponses, dnsData) };
+  const aRecords = await dig(domain, "a");
+  if (aRecords) { displayHelper(dnsResponses, aRecords) }
+  const cnameRecords = await dig(domain, "cname");
+  if (cnameRecords) { displayHelper(dnsResponses, cnameRecords) };
+  const nsRecords = await dig(domain, "ns");
+  if (nsRecords) { displayHelper(dnsResponses, nsRecords) };
 };
 
 // Prevents displaying duplicate responses

@@ -9,20 +9,21 @@
 /* Section styles */
 html {
   background-color: #444;
+  overflow-y: scroll;
 }
 
 body {
-  min-width: 300px;
+  width: 360px;
   font-family: "Lato";
   color: #eee;
   margin: 0px;
 }
 
 header {
+  box-sizing: border-box;
   margin-bottom: 15px;
   padding: 8px 8px 12px 8px;
   background: #3e674b;
-  width: 100%;
 }
 
 div#results {

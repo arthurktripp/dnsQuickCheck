@@ -26,3 +26,7 @@ This work is licensed under the Creative Commons Attribution-NonCommercial-Share
 ### V1.1.1
 - Prevents displaying duplicate results in QuickCheck.
 - Use the root domain for nameserver queries. Handles registrars that don't return an NS record when using a subdomain.
+
+### V1.1.2
+- Fixed CSS width error that was causing a visual stutter.
+- Fixed variable scope issue that could cause race condition.
